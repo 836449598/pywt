@@ -22,9 +22,9 @@ inaccurate computations of the :ref:`DWT <ref-dwt>` at the signal's ends.
 PyWavelets provides several methods of signal extrapolation that can be used to
 minimize this negative effect:
 
-  .. _`Modes.zero`:
+  .. _`Modes.zeros`:
 
-  * ``zero`` - **zero-padding** - signal is extended by adding zero samples::
+  * ``zeros`` - **zero-padding** - signal is extended by adding zero samples::
 
       ... 0  0 | x1 x2 ... xn | 0  0 ...
 
@@ -93,7 +93,7 @@ computations can be performed with the `periodization`_ mode:
 
     >>> import pywt
     >>> print(pywt.Modes.modes)
-    ['zero', 'constant', 'symmetric', 'periodic', 'smooth', 'periodization', 'reflect', 'antisymmetric', 'antireflect']
+    ['zeros', 'constant', 'symmetric', 'periodic', 'smooth', 'periodization', 'reflect', 'antisymmetric', 'antireflect']
 
 The following figure illustrates how a short signal (red) gets extended (black)
 outside of its original extent. Note that periodization first extends the
@@ -130,7 +130,7 @@ symmetric          sym, symh     symmetric
 reflect            symw          reflect
 smooth             spd, sp1      N/A
 constant           sp0           edge
-zero               zpd           constant, cval=0
+zeros              zpd           constant, cval=0
 periodic           ppd           wrap
 periodization      per           N/A
 antisymmetric      asym, asymh   N/A
